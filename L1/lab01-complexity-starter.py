@@ -124,7 +124,12 @@ def self_check() -> None:
     for _ in range(200):
         x, n = rng.randint(2, 50), rng.randint(0, 64)
         assert binary_pow(x, n, mod=POW_MOD) == pow(x, n, POW_MOD)
-    
+     # Дополнительный инвариант: сверка с эталоном 
+    for _ in range(50):
+                a = [rng.randint(-10, 10) for _ in range(rng.randint(1, 40))]
+                expected = sum(1 for i in range(len(a)) for j in range(i + 1, len(a)) if a[i] == a[j])
+                assert count_equal_pairs(a) == expected, f"Ошибка в count_equal_pairs для массива {a}"
+
     # Дополнительный инвариант: в массиве из уникальных элементов пар равных нет
     assert count_equal_pairs([1, 2, 3, 4, 5]) == 0
     print("self_check: OK")
