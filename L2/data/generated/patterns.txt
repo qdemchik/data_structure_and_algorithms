@@ -1,0 +1,10 @@
+texts_natural.txt	ko saku moveribi ridadi resu
+texts_small_alphabet.txt	bbedaccgbfffdbdbafgfda
+texts_natural.txt	pikemo mebu
+texts_small_alphabet.txt	bceegcg
+texts_natural.txt	amamo bomuneli dimuvora
+texts_small_alphabet.txt	cbdgcgcfea
+texts_natural.txt	tiva b
+texts_small_alphabet.txt	dgbefgebfedaacegbcbagfegfd
+texts_natural.txt	o mi
+texts_small_alphabet.txt	bdbfbgbedgcebgagbaggcgb
